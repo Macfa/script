@@ -1,0 +1,22 @@
+#!/bin/bash
+#!/usr/bin/env
+
+# current Date Time
+DATE=`date +%Y%m%d%H%M%S`
+
+# specific filename for backup
+BACK=""
+
+# sepcific filename for work
+WORK=""
+
+for i in $@
+do
+	if [ -f $i ]; then
+		cp $i $i.$DATE
+	elif [ -d $1 ]; then
+		cp -r $i $i.$DATE
+	else
+		touch $i
+	fi
+done
