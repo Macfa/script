@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+# tag : mail info full
 # include files
 . /root/cron/mail/disk_space
 
