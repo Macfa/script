@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#tag : db backup
+# tag : db backup
 dump_date=$(date +%Y%m%d);
 CURRENT_DATE=`date '+%Y-%m-%d %H:%M:%S'`;
 
