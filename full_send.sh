@@ -18,5 +18,5 @@ then
   zip -r ${CURRENT_DATE}.zip ./* # abstract all files and set name
 fi
 
-echo -e $FS_RESULT | mail -E -s "$(echo -e '211.117.60.181 FILESYSTEM INFO\nContent-type: text/html; charset=utf-8')" kombo67@naver.com
-echo -e "\n" | mail -s "$(echo -e '211.117.60.181 FULL BACKUP INFO\nContent-type: multipart/mixed;')" -a "${FULL_PATH}/${CURRENT_DATE}.zip" kombo67@naver.com,tmsk0711@naver.com,goonglee@naver.com
+echo -e $FS_RESULT | mail -E -s "$(echo -e 'FILESYSTEM INFO\nContent-type: text/html; charset=utf-8')" ??@naver.com
+echo -e "\n" | mail -s "$(echo -e 'FULL BACKUP INFO\nContent-type: multipart/mixed;')" -a "${FULL_PATH}/${CURRENT_DATE}.zip" ??@naver.com
