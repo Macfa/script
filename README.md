@@ -20,4 +20,7 @@ but, gave up CUZ content-type :P  and separate 2 file,
   this file isn't complete, add to few things .. ex) error in system log
   send a mail with full backup file on each 1 days and send filesystem disk capacity
   
-  
+* chksize
+need a 1 parameter ( depth )
+get current file & dir list
+if it is file print size, or it is dir, move into. and recursion
