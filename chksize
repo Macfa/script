@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# for search 
+# tag : recursion du check size
+
+
+DEPTH=$1
+CURRENT=0
+# SPACE="  " * ${CURRNET}
+echo "DEPTH : ${DEPTH}"
+echo "---"
+
+
+# Recursion
+FirstClass() {
+  # echo "$1"
+  cd "$1"
+  echo "|"
+  echo "|"
+  # list to array
+  # FILENAMES=("`ls -l | grep -v 'total' | grep -v '\.' | grep -v '\.\.' |awk '{print $NF}'`")
+  FILENAMES="`ls -l | grep -v 'total' | grep -v '\.' | grep -v '\.\.' |awk '{print $NF}'`"
+  SPACE="  "
+  echo $SPACE
+  for FILENAME in ${FILENAMES}
+  do
+    # echo "file : ${FILENAME}"
+    SIZE=`du -sh ${FILENAME} | awk '{print $1}'`
+
+    # seem to be tree
+    if [ -f ${FILENAME} ]
+    then
+      echo "${SPACE} - ${FILENAME} ${SIZE}"
+      echo "|"
+    elif [ -d ${FILENAME} ]
+    then
+      if [ ${CURRENT} -le ${DEPTH} ]
+      then
+        echo "${SPACE} --- ${FILENAME} ${SIZE}"
+        CURRENT=$((CURRENT+1))
+        FirstClass "${FILENAME}"
+        # echo "DEPTH : ${CURRENT}"
+      fi
+    fi
+  done
+  CURRENT=$((CURRENT-1))
+  # echo "DEPTH : ${CURRENT}"
+  cd ../
+}
+
+
+# call function
+FirstClass
