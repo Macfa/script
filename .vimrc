@@ -1,3 +1,18 @@
+# http://seohakim.blogspot.com/2015/02/mac-vim.html
+# git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# set nocompatible 
+# filetype off 
+# set rtp+=~/.vim/bundle/Vundle.vim 
+# call vundle#begin() 
+# Plugin 'gmarik/Vundle.vim' "required
+# Plugin 'tpope/vim-fugitive' "required 
+# call vundle#end()            
+# filetype plugin indent on " Put your non-Plugin stuff after this line
+# :w
+# :source %
+# :PluginInstall
+
+
 " Syntax Highlighing
 if has("syntax")
 	syntax on
